@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/styles.min.css">
+    <title>VOCABUL🤭L</title>
+</head>
+<body>
+    <header>
+        <h1>VOCABUL🤭L</h1>
+        <p>L'app qui te permet de t'entraîner à retenir du vocabulaire</p>
+        <h3>Ajoutez des mots</h3>
+    </header>
+    <main>
+        <div class="original_word">
+            <label for="">Mot original</label>
+            <input type="text" placeholder="Entrez le mot original" class="original">  
+        </div>
+        <div class="translated_word">
+            <label for="">Traduction</label>
+            <input type="text" placeholder="Entrez la traduction du mot" class="translation">
+        </div>
+        <div class="error"></div>
+        <h2>Il y a 0 mot(s) enregistré(s)</h2>
+        <div class="buttons">
+            <button class="send">Envoyer</button>
+            <button class="delete">Effacer la liste en cours</button>
+        </div>
+        <button class="start" style="display: none;">Teste tes connaissances</button>
+    </main>
+    <div class="game">
+        <div class="close">X</div>
+        <h1>TRADUIS LE MOT</h1>
+        <input type="text" placeholder="Que proposes-tu?" class="answer">
+        <button class="proposer">Proposer</button>
+        <div class="result"></div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

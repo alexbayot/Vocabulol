@@ -1,0 +1,95 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    ::selection{
+        background-color: crimson;
+    }
+}
+header{
+    text-align: center;
+    h1{
+        font-size: 50px;
+        font-weight: normal;
+    }
+    p{
+        color: gray;
+        font-size: 14px;
+    }
+    h3{
+        font-weight: normal;
+    }
+}
+main{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .original_word{
+        display: flex;
+        flex-direction: column;
+    }
+    .translated_word{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+    input{
+        width:700px;
+        padding: 10px 0;
+    }
+    button{
+        border: none;
+        color: white; 
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .send{
+        background-color: crimson;
+        padding: 10px 150px;
+        &:hover{
+            background-color: rgb(255, 25, 71);
+        }
+    }
+    .delete{
+        background-color: #5b5b5b;
+        padding: 10px 85px;
+        &:hover{
+            background-color: #8d8d8d;
+        }
+    }
+    .start{
+        margin-top: 30px;
+        background-color: purple;
+        padding: 10px 265px;
+        &:hover{
+            background-color: rgb(192, 0, 192);
+        }
+    }
+}
+.game{
+    width: 90%;
+    margin: auto;
+    h1{
+        text-align: center;
+    }
+}
+.answer{
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+.proposer{
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    width: 100%;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(255, 25, 71);
+    }
+}
+.close{
+cursor: pointer;
+}
