@@ -50,7 +50,7 @@ deleteButton.addEventListener('click', function(){
     recordedWords()
     startGame.style.display="none"
 })
-// close button
+// remove active class
 
 close.addEventListener('click', function() {
     game.classList.remove('active')

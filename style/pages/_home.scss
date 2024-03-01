@@ -69,9 +69,13 @@ main{
 .game{
     width: 90%;
     margin: auto;
+    display: none;
     h1{
         text-align: center;
     }
+}
+.active{
+    display: contents;
 }
 .answer{
     width: 100%;
