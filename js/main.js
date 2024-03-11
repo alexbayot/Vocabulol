@@ -12,14 +12,18 @@ let btnproposer = document.querySelector('.proposer')
 let txtAnswer = document.querySelector('.answer')
 let result = document.querySelector('.result')
 let game_score = document.querySelector('.game_score')
-score = 0;
+let score = 0
+let tries = 0
 let wordArray = []
 let randomNumber
 let thisWord
 
+//amounts of words recorded
+
 function recordedWords() {
     words.innerHTML = `Il y a ${wordArray.length} mot(s) enregistré(s)`
 }
+
 //check local storage
 
 if (JSON.parse(localStorage.getItem('mots'))) {
@@ -58,10 +62,14 @@ deleteButton.addEventListener('click', function(){
   recordedWords()
   startGame.style.display="none"
 })
+
 // remove active class
 
 close.addEventListener('click', function() {
   game.classList.remove('active')
+  score = 0
+  tries = 0
+  game_score.innerHTML  = ""
 })
 
 // add active class
@@ -85,8 +93,6 @@ function presentWord() {
 //right or wrong response
 
 btnproposer.addEventListener('click', function() {
-  let score = 0
-  let tries = 0
   tries++
   let userAnswer = txtAnswer.value;
   if (userAnswer.toLowerCase() == thisWord["Mot traduit"].toLowerCase()) {
@@ -98,6 +104,9 @@ btnproposer.addEventListener('click', function() {
     result.innerHTML = `Try again`;
   }
   game_score.innerHTML = `${score}/${tries}`;
+  setTimeout(() => {
+    result.innerHTML = ""
+  },2000)
   presentWord();
   txtAnswer.value = ""
 })
