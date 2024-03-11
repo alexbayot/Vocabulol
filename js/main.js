@@ -12,6 +12,9 @@ let btnproposer = document.querySelector('.proposer')
 let txtAnswer = document.querySelector('.answer')
 let result = document.querySelector('.result')
 let game_score = document.querySelector('.game_score')
+let wordList = document.querySelector('.word-list')
+let wordList2 = document.querySelector('.word-list2')
+//let listTitle = document.querySelector('.list-tiitle')
 let score = 0
 let tries = 0
 let wordArray = []
@@ -48,6 +51,8 @@ sendButton.addEventListener('click', function() {
     localStorage.setItem('mots', JSON.stringify(wordArray))
     recordedWords()
     startGame.style.display="inline-block"
+    //listTitle.style.display="inline"
+
   } else {
     error.innerHTML = `Remplissez les deux champs`
   }
@@ -111,4 +116,21 @@ btnproposer.addEventListener('click', function() {
   txtAnswer.value = ""
 })
 
+//show list of words
 
+wordArray.forEach((item) => {
+  wordList.innerHTML = wordList.innerHTML + "<br/>" + `<button class="delete" style="color: greenyellow; padding:5px; margin-right:10px">X</button>` + item["Mot original"] + ": " + item["Mot traduit"]
+});
+
+let deleteBtn = document.querySelectorAll('.delete')
+    deleteBtn.forEach(function (deleteBtn) {
+      
+      // fonction that will remove parent of pressed 'X'
+      deleteBtn.addEventListener('click', function(){
+        
+        deleteBtn.parentElement.remove()
+
+        // randomly delete one item from Array if press X, so it know when Array is empty and bring back msgVide 
+        wordArray.splice(0, 1)
+  })
+})
